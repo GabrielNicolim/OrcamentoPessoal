@@ -66,6 +66,7 @@ class Bd {
 		despesasFiltradas = this.recuperarTodosRegistros()
 
 		console.log(despesasFiltradas)
+
 		if(despesa.ano != '') {
 			despesasFiltradas = despesasFiltradas.filter(d => d.ano == despesa.ano)
 		}
@@ -91,7 +92,14 @@ class Bd {
 		}
 
 		console.log(despesasFiltradas)
-		return despesasFiltradas
+
+		if(despesasFiltradas.length != 0) { 
+			return despesasFiltradas
+		}
+		else {
+			return 1; 
+		}
+		
 	}
 
 	remover(id) {
@@ -161,10 +169,14 @@ function carregaListaDespesas(despesas = Array()) {
 	let listaDespesas = document.getElementById('listaDespesas')
 	listaDespesas.innerHTML = ''
 
+	let valorDespesas = 0 
+
 	despesas.forEach(function(d) {
 		let linha = listaDespesas.insertRow()
 
 		linha.insertCell(0).innerHTML = `${d.dia}/${d.mes}/${d.ano}`
+
+		valorDespesas += parseFloat(d.valor)
 
 		switch(d.tipo) {
 			case '1': d.tipo = 'Alimentação'
@@ -196,6 +208,8 @@ function carregaListaDespesas(despesas = Array()) {
 		}
 		linha.insertCell(4).append(btn)
 	})
+	
+	document.getElementById('total').innerHTML = valorDespesas
 }
 
 function pesquisarDespesa() {
@@ -210,5 +224,14 @@ function pesquisarDespesa() {
 
 	despesas = bd.pesquisar(despesa) 
 
-	carregaListaDespesas(despesas)
+	// Caso ele realize uma pesquisa e não encontre nenhum valor adequado ele retorna 1
+	if(despesas != 1) {
+		carregaListaDespesas(despesas)
+	}
+	else {
+		// Limpa a tabela de despesas e retorna o total das despesas a 0 
+		document.getElementById('listaDespesas').innerHTML = ''
+		document.getElementById('total').innerHTML = 0
+	}
+	
 }
