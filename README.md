@@ -2,8 +2,8 @@
 
 ## About 
 
-In this project I used JavaScript to communicate with the local browser storage and Bootstrap to create the pages layout. This project creates an expense record and returns the amount to be paid by the user. Registration filters and responsive layout were implemented.
+Neste projeto, JavaScript foi utilizado para realizar a comunicação com o armazenamento local do browser e realizar o registro de despesas, elas podem, após o registro, ser consultadas e filtrada segundo a preferência do usuário. A parte visual foi construída utilizando Bootstrap. 
 
 ## Preview
 
-To start the project, open the file `index.html` in your browser, or [click in this link](https://gabrielnicolim.github.io/OrcamentoPessoal/)
+Para visualizar o projeto abra o `index.html` em seu navegador ou [clique nesse link](https://gabrielnicolim.github.io/OrcamentoPessoal/)
