@@ -2,7 +2,7 @@
 
 ## About 
 
-In this project I used JavaScript to communicate with the local browser storage and Bootstrap to create the layout of the pages. This project creates an expense record and returns the amount to be paid by the user. Registration filters and responsive layout were implemented.
+In this project I used JavaScript to communicate with the local browser storage and Bootstrap to create the pages layout. This project creates an expense record and returns the amount to be paid by the user. Registration filters and responsive layout were implemented.
 
 ## Preview
 
